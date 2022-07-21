@@ -1,0 +1,18 @@
+oauth:
+  client:
+    secret: secret
+    id: web
+  server:
+    host: testing-oauth-service.smartnomadworkspace.svc.cluster.local
+    port: 8985
+    checkTokenUrl: /oauth/check_token
+
+eventbus:
+  redis:
+    host: testing-redis-master.smartnomadworkspace.svc.cluster.local
+    port: 6379
+
+proxy:
+  enabled: true
+  host: cs.pr-proxy.service.sd.diod.tech
+  port: 3128

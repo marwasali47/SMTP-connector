@@ -1,0 +1,43 @@
+server:
+  port: 5083
+
+infra:
+  host: localhost
+
+# Database configuration
+management:
+  security:
+    enabled: false
+security:
+  enable-csrf: true
+
+oauth:
+  client:
+    secret: secret
+    id: web
+  server:
+    host: localhost
+    port: 8985
+    checkTokenUrl: /oauth/check_token
+
+mail:
+  imap:
+    protocol: 'imap'
+    host: 'imap.orange.fr'
+    port: 993
+  smtp:
+    host: 'smtp.orange.fr'
+    port : 587
+
+eventbus:
+  redis:
+    host: ${infra.host}
+    port: 6379
+
+proxy:
+  enabled: false
+  host: cs.pr-proxy.service.sd.diod.tech
+  port: 3128
+
+logging:
+  config: 'classpath:log4j2.xml'
